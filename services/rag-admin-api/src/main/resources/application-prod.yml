@@ -1,0 +1,12 @@
+# Production profile — supply credentials via environment variables.
+rag-admin:
+  seed-admin:
+    username: ${RAG_ADMIN_USERNAME:admin}
+    password: ${RAG_ADMIN_PASSWORD}
+    display-name: ${RAG_ADMIN_DISPLAY_NAME:系统管理员}
+  default-lightrag:
+    name: ${LIGHTRAG_NAME:LightRAG}
+    base-url: ${LIGHTRAG_BASE_URL}
+    api-key: ${LIGHTRAG_API_KEY:}
+    username: ${LIGHTRAG_USERNAME:}
+    password: ${LIGHTRAG_PASSWORD:}

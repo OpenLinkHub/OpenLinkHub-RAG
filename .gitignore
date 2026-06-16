@@ -1,0 +1,66 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# Secrets & local overrides (never commit real credentials)
+.env
+.env.*
+!.env.example
+!**/.env.example
+!**/.env.*.example
+**/application-local.yml
+**/application-local.properties
+*.local.yml
+*.local.properties
+credentials.json
+secrets.json
+*.pem
+*.key
+*.p12
+*.jks
+
+# Java / Maven
+target/
+*.class
+*.jar
+*.war
+hs_err_pid*
+
+# Node / frontend
+node_modules/
+dist/
+.vite/
+.npm/
+.env.local
+
+# Python / LightRAG runtime artifacts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+*.log
+*.log.*
+
+# RAG data directories
+rag_storage/
+inputs/
+output/
+data/
+
+# Tooling caches
+.codegraph/
+.cache/
+temp/
+
+# Upstream LightRAG (separate git checkout; clone under LightRAG/)
+/LightRAG/

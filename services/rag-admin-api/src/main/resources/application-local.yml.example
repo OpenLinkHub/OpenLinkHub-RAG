@@ -1,0 +1,16 @@
+# Optional personal overrides (gitignored).
+# Activate with: SPRING_PROFILES_ACTIVE=dev,local
+#
+#   cp application-local.yml.example application-local.yml
+
+rag-admin:
+  seed-admin:
+    username: admin
+    password: admin123
+    display-name: 系统管理员
+  default-lightrag:
+    name: Local LightRAG
+    base-url: http://127.0.0.1:9621
+    api-key:
+    username: admin
+    password: admin123
