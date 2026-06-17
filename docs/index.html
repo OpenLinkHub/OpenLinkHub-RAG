@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenLinkHub RAG — LightRAG 之上的知识库管理平台，提供 RBAC、文档管理、流式查询与模型配置。">
+  <title>OpenLinkHub RAG</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="badge">OpenLinkHub · Knowledge Base Management</div>
+      <h1><span>OpenLinkHub RAG</span></h1>
+      <p class="lead">
+        在 <strong>LightRAG</strong> 检索与生成引擎之上，提供完整的知识库管理平面：
+        用户与权限、知识库授权、文档操作、流水线监控、流式查询测试与模型配置。
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/OpenLinkHub/OpenLinkHub-RAG" target="_blank" rel="noopener">查看源码</a>
+        <a class="btn btn-secondary" href="https://github.com/OpenLinkHub/OpenLinkHub-RAG/blob/main/docs/rag-admin-design.md" target="_blank" rel="noopener">架构设计</a>
+        <a class="btn btn-secondary" href="#quickstart">快速开始</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <article class="card">
+        <h3>引擎与管理层分离</h3>
+        <p>LightRAG 专注 RAG 能力；OpenLinkHub 负责 RBAC、审计、知识库归属与 API 代理。</p>
+      </article>
+      <article class="card">
+        <h3>开箱即用的管理端</h3>
+        <p>Spring Boot 管理 API + Vue 控制台，覆盖文档上传、索引状态、流式问答与模型配置。</p>
+      </article>
+      <article class="card">
+        <h3>面向三类用户</h3>
+        <p>平台管理员、知识库 Owner、普通使用者 — 权限模型从第一天就纳入设计。</p>
+      </article>
+    </div>
+
+    <section id="architecture">
+      <h2>仓库结构</h2>
+      <pre class="layout-tree">OpenLinkHub-RAG/
+  LightRAG/                    # 上游 LightRAG 运行时（独立 clone）
+  services/rag-admin-api/      # Spring Boot 管理 API
+  apps/rag-admin-web/          # Vue 管理控制台
+  docs/                        # 设计文档与 GitHub Pages 站点</pre>
+    </section>
+
+    <section id="ports">
+      <h2>运行端口</h2>
+      <div class="ports">
+        <div class="port">LightRAG · 127.0.0.1:9621</div>
+        <div class="port">RAG Admin API · localhost:8091</div>
+        <div class="port">RAG Admin Web · localhost:5176</div>
+      </div>
+    </section>
+
+    <section id="quickstart" class="steps">
+      <h2>快速开始</h2>
+      <ol>
+        <li>在 <code>LightRAG/</code> 下按上游文档启动 LightRAG 服务。</li>
+        <li>复制开发配置：
+          <code>cp services/rag-admin-api/config/application-dev.yml.example services/rag-admin-api/config/application-dev.yml</code>
+        </li>
+        <li>启动管理 API：<code>cd services/rag-admin-api && mvn spring-boot:run</code></li>
+        <li>启动 Web 控制台：<code>cd apps/rag-admin-web && npm install && npm run dev</code></li>
+        <li>默认登录：<code>admin / admin123</code>（请在生产环境修改）</li>
+      </ol>
+    </section>
+
+    <section id="mvp">
+      <h2>当前 MVP 能力</h2>
+      <ul class="mvp-list">
+        <li>种子管理员登录与内存 RBAC</li>
+        <li>默认知识库绑定本地 LightRAG</li>
+        <li>LightRAG 健康检查</li>
+        <li>文档列表、上传、文本插入、删除</li>
+        <li>索引流水线状态代理</li>
+        <li>流式查询 Playground</li>
+        <li>模型配置列表与 <code>pending_restart</code> 状态</li>
+      </ul>
+    </section>
+
+    <section id="roadmap">
+      <h2>路线图</h2>
+      <ul class="mvp-list">
+        <li>数据库持久化替代内存存储</li>
+        <li>Spring Security JWT</li>
+        <li>用户 / 角色 / 知识库成员管理界面</li>
+        <li>审计日志持久化</li>
+        <li>LightRAG 实例生命周期与模型重启工作流</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p>
+      <a href="https://github.com/OpenLinkHub/OpenLinkHub-RAG">OpenLinkHub/OpenLinkHub-RAG</a>
+      · Apache-2.0 ·
+      <a href="https://openlinkhub.github.io/OpenLinkHub-RAG/">Project Site</a>
+    </p>
+  </footer>
+</body>
+</html>

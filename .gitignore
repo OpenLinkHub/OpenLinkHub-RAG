@@ -64,3 +64,5 @@ temp/
 
 # Upstream LightRAG (separate git checkout; clone under LightRAG/)
 /LightRAG/
+services/rag-admin-api/config/application-dev.yml
+services/rag-admin-api/config/application-local.yml

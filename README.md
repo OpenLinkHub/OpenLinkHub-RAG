@@ -28,6 +28,7 @@ Then start the management API:
 
 ```bash
 cd services/rag-admin-api
+cp config/application-dev.yml.example config/application-dev.yml
 mvn spring-boot:run
 ```
 
@@ -63,3 +64,7 @@ password: admin123
 - Add user, role, and knowledge base member management screens.
 - Add audit log persistence.
 - Add managed LightRAG instance lifecycle and model profile restart workflow.
+
+## Project Site
+
+GitHub Pages: https://openlinkhub.github.io/OpenLinkHub-RAG/

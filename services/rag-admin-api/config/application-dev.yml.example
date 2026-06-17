@@ -1,7 +1,7 @@
-# Optional personal overrides (gitignored).
-# Activate with: SPRING_PROFILES_ACTIVE=dev,local
+# Local development overrides (copy to application-dev.yml; gitignored).
+#   cp application-dev.yml.example application-dev.yml
 #
-#   cp application-local.yml.example application-local.yml
+# Spring loads ./config/ automatically when running from services/rag-admin-api/
 
 rag-admin:
   seed-admin:
