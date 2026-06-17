@@ -1,0 +1,23 @@
+---
+description: Git 提交规范——禁止 AI/Cursor 署名，保持提交者信息干净
+alwaysApply: true
+---
+
+# Git 提交原则
+
+## 提交者信息
+
+- **禁止**在 commit message 中添加 `Co-authored-by`、`Co-Authored-By` 或任何 AI / Cursor / Agent 相关署名。
+- **禁止**使用 `cursoragent@cursor.com`、`noreply@anthropic.com` 等工具账号作为 author 或 co-author。
+- 提交应只反映**实际人类开发者**（本仓库维护者），不暴露辅助工具痕迹。
+
+## Commit message
+
+- 使用 conventional commits：`feat:`、`fix:`、`chore:`、`docs:` 等。
+- 正文说明 **why**，复杂变更可用简短 bullet。
+- 不写 `Co-authored-by` 尾注；需要说明协作时写在正文即可，例如「与团队讨论后采用方案 B」。
+
+## 执行要求
+
+- 使用 `git commit` 时，message 中**不得**包含 Cursor、Claude、Copilot、Agent 等字样。
+- 若 hook 或工具自动注入 co-author，提交前检查 `git log -1 --format=%B` 并去掉后再 push。
