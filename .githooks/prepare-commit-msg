@@ -1,0 +1,8 @@
+#!/bin/sh
+# Remove AI/Cursor co-author trailers injected by IDE tooling.
+MSG_FILE="$1"
+[ -f "$MSG_FILE" ] || exit 0
+
+TMP="$(mktemp)"
+grep -viE '^co-authored-by:.*(cursor|cursoragent|anthropic|claude|copilot)' "$MSG_FILE" > "$TMP" || true
+mv "$TMP" "$MSG_FILE"
