@@ -167,13 +167,19 @@ textarea {
 }
 
 .nav-item {
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 42px;
   margin-bottom: 8px;
+  padding: 0 12px;
   border: 1px solid transparent;
+  border-radius: 10px;
   color: #cbd5e1;
   text-align: left;
+  text-decoration: none;
   background: transparent;
+  box-sizing: border-box;
 }
 
 .nav-item.active,
@@ -181,6 +187,28 @@ textarea {
   color: #ffffff;
   border-color: rgba(125, 211, 252, 0.25);
   background: rgba(14, 165, 233, 0.16);
+}
+
+.nav-group {
+  margin: 12px 0 8px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.nav-group-title {
+  margin: 0 0 8px 12px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav-subitem {
+  height: 38px;
+  margin-bottom: 4px;
+  padding-left: 18px;
+  font-size: 13px;
 }
 
 .workspace {
@@ -578,4 +606,205 @@ textarea {
   cursor: pointer;
   color: #0369a1;
   font-size: 13px;
+}
+
+.settings-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tab-btn {
+  border: 1px solid #dbe4ef;
+  background: #fff;
+  color: #334155;
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background: #0f172a;
+  color: #fff;
+  border-color: #0f172a;
+}
+
+.settings-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.panel-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cols-user { grid-template-columns: 1fr 1fr 1fr 1.2fr 0.6fr 0.9fr !important; }
+.cols-role { grid-template-columns: 1fr 1fr 0.7fr 0.6fr 0.9fr !important; }
+.cols-menu { grid-template-columns: 1.2fr 1fr 1.2fr 0.5fr 0.5fr 0.9fr !important; }
+.cols-dept { grid-template-columns: 1.2fr 1fr 0.6fr 0.6fr 0.9fr !important; }
+
+.list-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid #dbe4ef;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.search-field {
+  display: grid;
+  gap: 6px;
+  flex: 1;
+  min-width: 260px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.list-toolbar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+button.ghost {
+  background: transparent;
+}
+
+.list-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.list-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.list-pagination-controls select {
+  width: auto;
+  min-width: 72px;
+  margin: 0 4px;
+}
+
+.table-empty {
+  padding: 24px 16px;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.tree-table-wrap .table-row {
+  align-items: center;
+}
+
+.tree-label-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.tree-toggle,
+.tree-toggle-placeholder {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #64748b;
+}
+
+.tree-picker {
+  border: 1px solid #dbe4ef;
+  border-radius: 10px;
+  max-height: 220px;
+  overflow: auto;
+  background: #f8fafc;
+}
+
+.tree-picker-option {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 34px;
+  padding: 8px 12px;
+  border: none;
+  border-bottom: 1px solid #eef2f6;
+  text-align: left;
+  background: transparent;
+}
+
+.tree-picker-option.active {
+  background: #eff6ff;
+  color: #0369a1;
+}
+
+.tree-picker-option.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.tree-picker-marker {
+  margin-right: 6px;
+  color: #94a3b8;
+}
+
+.modal-card-wide {
+  width: min(640px, 92vw);
+}
+
+.tree-multi-select {
+  min-height: 180px;
+}
+
+.modal-mask {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: grid;
+  place-items: center;
+  z-index: 50;
+}
+
+.modal-card {
+  width: min(520px, 92vw);
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  display: grid;
+  gap: 12px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.2);
+}
+
+.modal-card label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.modal-card input,
+.modal-card select,
+.modal-card textarea {
+  border: 1px solid #dbe4ef;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
 }

@@ -10,6 +10,7 @@ public class RagAdminProperties {
 
     private SeedAdmin seedAdmin = new SeedAdmin("admin", "", "系统管理员");
     private DefaultLightRag defaultLightRag = new DefaultLightRag("Local LightRAG", "http://127.0.0.1:9621", null, "", "");
+    private Security security = new Security();
     private Cors cors = new Cors(Arrays.asList(
             "http://localhost:5173",
             "http://localhost:5174",
@@ -33,6 +34,16 @@ public class RagAdminProperties {
     public void setDefaultLightRag(DefaultLightRag defaultLightRag) {
         if (defaultLightRag != null) {
             this.defaultLightRag = defaultLightRag;
+        }
+    }
+
+    public Security security() {
+        return security;
+    }
+
+    public void setSecurity(Security security) {
+        if (security != null) {
+            this.security = security;
         }
     }
 
@@ -163,6 +174,28 @@ public class RagAdminProperties {
 
         public void setAllowedOrigins(List<String> allowedOrigins) {
             this.allowedOrigins = allowedOrigins;
+        }
+    }
+
+    public static final class Security {
+
+        private String jwtSecret = "openlinkhub-rag-admin-change-me-in-production";
+        private long jwtExpirationMs = 86400000L;
+
+        public String jwtSecret() {
+            return jwtSecret;
+        }
+
+        public void setJwtSecret(String jwtSecret) {
+            this.jwtSecret = jwtSecret;
+        }
+
+        public long jwtExpirationMs() {
+            return jwtExpirationMs;
+        }
+
+        public void setJwtExpirationMs(long jwtExpirationMs) {
+            this.jwtExpirationMs = jwtExpirationMs;
         }
     }
 }

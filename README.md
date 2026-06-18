@@ -49,8 +49,9 @@ password: admin123
 
 ## Current MVP
 
-- Login with a seeded administrator.
-- In-memory RBAC and permission model.
+- Login with JWT (Spring Security) and PostgreSQL-backed RBAC.
+- System settings: user, role, menu, and department management.
+- In-memory knowledge base and LightRAG proxy (unchanged).
 - Default knowledge base bound to local LightRAG.
 - LightRAG endpoint health check.
 - Document list, upload, text insert, delete, and pipeline status proxy.
@@ -59,9 +60,7 @@ password: admin123
 
 ## Next Steps
 
-- Replace in-memory data with database persistence.
-- Add Spring Security JWT.
-- Add user, role, and knowledge base member management screens.
+- Replace in-memory knowledge base data with database persistence.
 - Add audit log persistence.
 - Add managed LightRAG instance lifecycle and model profile restart workflow.
 

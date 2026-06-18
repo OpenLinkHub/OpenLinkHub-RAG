@@ -1,7 +1,5 @@
 # Local development overrides (copy to application-dev.yml; gitignored).
 #   cp application-dev.yml.example application-dev.yml
-#
-# Spring loads ./config/ automatically when running from services/rag-admin-api/
 
 rag-admin:
   seed-admin:
@@ -14,3 +12,10 @@ rag-admin:
     api-key:
     username: admin
     password: admin123
+
+# PostgreSQL (shared with LightRAG instance)
+POSTGRES_HOST: localhost
+POSTGRES_PORT: 5431
+POSTGRES_USER: postgres
+POSTGRES_PASSWORD: your-password-here
+POSTGRES_DATABASE: rag

@@ -10,13 +10,25 @@ public final class AdminUser {
     private final String password;
     private final String displayName;
     private final Set<Role> roles;
+    private final Set<String> permissionStrings;
+    private final boolean superAdmin;
 
-    public AdminUser(String id, String username, String password, String displayName, Set<Role> roles) {
+    public AdminUser(
+            String id,
+            String username,
+            String password,
+            String displayName,
+            Set<Role> roles,
+            Set<String> permissionStrings,
+            boolean superAdmin
+    ) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.displayName = displayName;
         this.roles = roles;
+        this.permissionStrings = permissionStrings == null ? Set.of() : Set.copyOf(permissionStrings);
+        this.superAdmin = superAdmin;
     }
 
     public String id() {
@@ -37,6 +49,14 @@ public final class AdminUser {
 
     public Set<Role> roles() {
         return roles;
+    }
+
+    public Set<String> permissionStrings() {
+        return permissionStrings;
+    }
+
+    public boolean superAdmin() {
+        return superAdmin;
     }
 
     public Set<Permission> permissions() {
